@@ -1,0 +1,12 @@
+# Build directory
+build/
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Vim swap files
+*.swp

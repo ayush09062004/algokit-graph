@@ -2,6 +2,8 @@
 
 #include <cstddef>
 #include <vector>
+#include "algokit/dfs_result.hpp"
+#include "algokit/bfs_result.hpp"
 
 namespace algokit {
 
@@ -32,7 +34,12 @@ public:
 
     const std::vector<Edge>& neighbors(std::size_t vertex) const;
 
+    BFSResult bfs(std::size_t source) const;
+
+    DFSResult dfs(std::size_t source) const;
+
 private:
+    void validate_vertex(std::size_t vertex) const;
     Graph(std::size_t vertices, bool directed);
 
     bool directed_;

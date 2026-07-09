@@ -1,5 +1,7 @@
 #include "algokit/graph.hpp"
-
+#include <stdexcept>
+#include "algokit/dfs.hpp"
+#include "algokit/bfs.hpp"
 namespace algokit {
 
 //==========================
@@ -13,7 +15,15 @@ Graph::Graph(std::size_t vertices, bool directed)
       adjacency_list_(vertices)
 {
 }
-
+void Graph::validate_vertex(std::size_t vertex) const
+{
+    if (vertex >= vertex_count_)
+    {
+        throw std::out_of_range(
+            "Vertex index is out of range."
+        );
+    }
+}
 //==========================
 // Factory Methods
 //==========================
@@ -37,6 +47,8 @@ void Graph::add_edge(
     std::size_t to,
     Weight weight)
 {
+    validate_vertex(from);
+    validate_vertex(to);
     adjacency_list_[from].push_back({to, weight});
 
     if (!directed_)
@@ -68,7 +80,16 @@ bool Graph::is_directed() const
 
 const std::vector<Edge>& Graph::neighbors(std::size_t vertex) const
 {
+    validate_vertex(vertex);
     return adjacency_list_[vertex];
+}
+BFSResult Graph::bfs(std::size_t source) const
+{
+    return algokit::bfs(*this, source);
+}
+DFSResult Graph::dfs(std::size_t source) const
+{
+    return algokit::dfs(*this, source);
 }
 
 } // namespace algokit
