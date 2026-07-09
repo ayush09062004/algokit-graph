@@ -6,6 +6,8 @@ project(
     LANGUAGES CXX
 )
 
+find_package(pybind11 CONFIG REQUIRED)
+
 #--------------------------------------------------
 # C++ Standard
 #--------------------------------------------------
@@ -80,10 +82,23 @@ add_library(
     cpp/src/kahn_topological_sort_result.cpp
 
     #==========================
+    # Shortest Path
+    #==========================
+
+    cpp/src/shortest_path.cpp
+    cpp/src/shortest_path_result.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
     cpp/src/dfs_engine.cpp
+)
+
+set_target_properties(
+    algokit_graph
+    PROPERTIES
+    POSITION_INDEPENDENT_CODE ON
 )
 
 target_include_directories(
@@ -248,6 +263,48 @@ target_link_libraries(
 add_test(
     NAME KahnTopologicalSort
     COMMAND test_kahn_topological_sort
+)
+
+#--------------------------------------------------
+# Shortest Path Tests
+#--------------------------------------------------
+
+add_executable(
+    test_shortest_path
+    tests/test_shortest_path.cpp
+)
+
+target_link_libraries(
+    test_shortest_path
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME ShortestPath
+    COMMAND test_shortest_path
+)
+
+
+#--------------------------------------------------
+# Python Module
+#--------------------------------------------------
+
+pybind11_add_module(
+    algokit
+    bindings/module.cpp
+)
+
+target_link_libraries(
+    algokit
+    PRIVATE
+    algokit_graph
+)
+
+target_include_directories(
+    algokit
+    PRIVATE
+    cpp/include
 )
 
 #cmake -B build

@@ -9,9 +9,11 @@
 #include "algokit/directed_cycle_detection.hpp"
 #include "algokit/topological_sort_result.hpp"
 #include "algokit/kahn_topological_sort_result.hpp"
+#include "algokit/shortest_path_result.hpp"
+#include "algokit/types.hpp"
 namespace algokit {
 
-using Weight = double;
+//using Weight = double;
 
 struct Edge {
     std::size_t to;
@@ -52,6 +54,10 @@ public:
 
     KahnTopologicalSortResult
     kahn_topological_sort() const;
+
+    ShortestPathResult shortest_path(
+    std::size_t source
+    ) const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

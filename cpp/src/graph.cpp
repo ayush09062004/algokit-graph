@@ -7,6 +7,7 @@
 #include "algokit/directed_cycle_detection.hpp"
 #include "algokit/topological_sort.hpp"
 #include "algokit/kahn_topological_sort.hpp"
+#include "algokit/shortest_path.hpp"
 namespace algokit {
 
 //==========================
@@ -157,6 +158,16 @@ Graph::kahn_topological_sort() const
     }
 
     return algokit::kahn_topological_sort(*this);
+}
+
+ShortestPathResult
+Graph::shortest_path(
+    std::size_t source) const
+{
+    return algokit::shortest_path(
+        *this,
+        source
+    );
 }
 
 } // namespace algokit

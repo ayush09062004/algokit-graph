@@ -1,0 +1,18 @@
+[build-system]
+requires = [
+    "scikit-build-core>=0.10",
+    "pybind11>=2.12"
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "algokit"
+version = "0.1.0"
+description = "Modern Graph Algorithms Library"
+authors = [
+    { name = "Ayush Raj" }
+]
+requires-python = ">=3.9"
+
+[tool.scikit-build]
+build-dir = "build-python"
