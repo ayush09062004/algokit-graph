@@ -8,6 +8,7 @@
 #include "algokit/cycle_detection.hpp"
 #include "algokit/directed_cycle_detection.hpp"
 #include "algokit/topological_sort_result.hpp"
+#include "algokit/kahn_topological_sort_result.hpp"
 namespace algokit {
 
 using Weight = double;
@@ -48,6 +49,9 @@ public:
     bool has_directed_cycle() const;
 
     TopologicalSortResult topological_sort() const;
+
+    KahnTopologicalSortResult
+    kahn_topological_sort() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

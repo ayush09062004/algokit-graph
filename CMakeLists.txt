@@ -73,6 +73,13 @@ add_library(
     cpp/src/topological_sort_result.cpp
 
     #==========================
+    # Kahn Topological Sort
+    #==========================
+
+    cpp/src/kahn_topological_sort.cpp
+    cpp/src/kahn_topological_sort_result.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -221,3 +228,28 @@ add_test(
     NAME TopologicalSort
     COMMAND test_topological_sort
 )
+
+
+#--------------------------------------------------
+# Kahn Topological Sort Tests
+#--------------------------------------------------
+
+add_executable(
+    test_kahn_topological_sort
+    tests/test_kahn_topological_sort.cpp
+)
+
+target_link_libraries(
+    test_kahn_topological_sort
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME KahnTopologicalSort
+    COMMAND test_kahn_topological_sort
+)
+
+#cmake -B build
+#cmake --build build
+#ctest --test-dir build --output-on-failure 

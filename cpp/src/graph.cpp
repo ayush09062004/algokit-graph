@@ -6,6 +6,7 @@
 #include "algokit/cycle_detection.hpp"
 #include "algokit/directed_cycle_detection.hpp"
 #include "algokit/topological_sort.hpp"
+#include "algokit/kahn_topological_sort.hpp"
 namespace algokit {
 
 //==========================
@@ -143,6 +144,19 @@ Graph::topological_sort() const
     }
 
     return algokit::topological_sort(*this);
+}
+
+KahnTopologicalSortResult
+Graph::kahn_topological_sort() const
+{
+    if (!directed_)
+    {
+        throw std::logic_error(
+            "Kahn's topological sort is only supported for directed graphs."
+        );
+    }
+
+    return algokit::kahn_topological_sort(*this);
 }
 
 } // namespace algokit
