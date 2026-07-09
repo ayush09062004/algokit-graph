@@ -1,4 +1,0 @@
-/workspaces/algokit-graph/build/CMakeFiles/algokit_graph.dir
-/workspaces/algokit-graph/build/CMakeFiles/graph_demo.dir
-/workspaces/algokit-graph/build/CMakeFiles/edit_cache.dir
-/workspaces/algokit-graph/build/CMakeFiles/rebuild_cache.dir

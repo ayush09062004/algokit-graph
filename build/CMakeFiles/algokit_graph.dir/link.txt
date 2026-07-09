@@ -1,2 +1,0 @@
-/usr/bin/ar qc libalgokit_graph.a CMakeFiles/algokit_graph.dir/cpp/src/graph.cpp.o
-/usr/bin/ranlib libalgokit_graph.a
