@@ -3,6 +3,9 @@
 #include "algokit/dfs.hpp"
 #include "algokit/bfs.hpp"
 #include "algokit/connected_components.hpp"
+#include "algokit/cycle_detection.hpp"
+#include "algokit/directed_cycle_detection.hpp"
+#include "algokit/topological_sort.hpp"
 namespace algokit {
 
 //==========================
@@ -103,6 +106,43 @@ Graph::connected_components() const
     }
 
     return algokit::connected_components(*this);
+}
+
+bool Graph::has_cycle() const
+{
+    if (directed_)
+    {
+        throw std::logic_error(
+            "Cycle detection is currently supported only for undirected graphs."
+        );
+    }
+
+    return algokit::has_cycle(*this);
+}
+
+bool Graph::has_directed_cycle() const
+{
+    if (!directed_)
+    {
+        throw std::logic_error(
+            "Directed cycle detection is only supported for directed graphs."
+        );
+    }
+
+    return algokit::has_directed_cycle(*this);
+}
+
+TopologicalSortResult
+Graph::topological_sort() const
+{
+    if (!directed_)
+    {
+        throw std::logic_error(
+            "Topological sort is only supported for directed graphs."
+        );
+    }
+
+    return algokit::topological_sort(*this);
 }
 
 } // namespace algokit

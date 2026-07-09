@@ -54,6 +54,25 @@ add_library(
     cpp/src/connected_components_result.cpp
 
     #==========================
+    # Cycle Detection
+    #==========================
+
+    cpp/src/cycle_detection.cpp
+
+    #==========================
+    # Directed Cycle Detection
+    #==========================
+
+    cpp/src/directed_cycle_detection.cpp
+
+    #==========================
+    # Topological Sort
+    #==========================
+
+    cpp/src/topological_sort.cpp
+    cpp/src/topological_sort_result.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -122,9 +141,8 @@ add_test(
 )
 
 #--------------------------------------------------
-#Connected Components Tests
+# Connected Components Tests
 #--------------------------------------------------
-
 
 add_executable(
     test_connected_components
@@ -132,12 +150,74 @@ add_executable(
 )
 
 target_link_libraries(
-     test_connected_components
-     PRIVATE
-         algokit_graph
- )
+    test_connected_components
+    PRIVATE
+        algokit_graph
+)
 
 add_test(
-     NAME ConnectedComponents
-     COMMAND test_connected_components
- )
+    NAME ConnectedComponents
+    COMMAND test_connected_components
+)
+
+#--------------------------------------------------
+# Cycle Detection Tests
+#--------------------------------------------------
+
+add_executable(
+    test_cycle_detection
+    tests/test_cycle_detection.cpp
+)
+
+target_link_libraries(
+    test_cycle_detection
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME CycleDetection
+    COMMAND test_cycle_detection
+)
+
+
+#--------------------------------------------------
+# Directed Cycle Detection Tests
+#--------------------------------------------------
+
+add_executable(
+    test_directed_cycle_detection
+    tests/test_directed_cycle_detection.cpp
+)
+
+target_link_libraries(
+    test_directed_cycle_detection
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME DirectedCycleDetection
+    COMMAND test_directed_cycle_detection
+)
+
+
+#--------------------------------------------------
+# Topological Sort Tests
+#--------------------------------------------------
+
+add_executable(
+    test_topological_sort
+    tests/test_topological_sort.cpp
+)
+
+target_link_libraries(
+    test_topological_sort
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME TopologicalSort
+    COMMAND test_topological_sort
+)

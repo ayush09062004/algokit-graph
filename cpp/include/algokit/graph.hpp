@@ -5,6 +5,9 @@
 #include "algokit/dfs_result.hpp"
 #include "algokit/bfs_result.hpp"
 #include "algokit/connected_components_result.hpp"
+#include "algokit/cycle_detection.hpp"
+#include "algokit/directed_cycle_detection.hpp"
+#include "algokit/topological_sort_result.hpp"
 namespace algokit {
 
 using Weight = double;
@@ -39,6 +42,12 @@ public:
     DFSResult dfs(std::size_t source) const;
 
     ConnectedComponentsResult connected_components() const;
+
+    bool has_cycle() const;
+
+    bool has_directed_cycle() const;
+
+    TopologicalSortResult topological_sort() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;
