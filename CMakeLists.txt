@@ -26,25 +26,44 @@ enable_testing()
 add_library(
     algokit_graph
 
+    #==========================
     # Core
+    #==========================
+
     cpp/src/graph.cpp
 
+    #==========================
     # BFS
+    #==========================
+
     cpp/src/bfs.cpp
     cpp/src/bfs_result.cpp
 
+    #==========================
     # DFS
+    #==========================
+
     cpp/src/dfs.cpp
     cpp/src/dfs_result.cpp
 
+    #==========================
+    # Connected Components
+    #==========================
+
+    cpp/src/connected_components.cpp
+    cpp/src/connected_components_result.cpp
+
+    #==========================
     # Internal Engines
+    #==========================
+
     cpp/src/dfs_engine.cpp
 )
 
 target_include_directories(
     algokit_graph
     PUBLIC
-    cpp/include
+        cpp/include
 )
 
 #--------------------------------------------------
@@ -59,7 +78,7 @@ add_executable(
 target_link_libraries(
     graph_demo
     PRIVATE
-    algokit_graph
+        algokit_graph
 )
 
 #--------------------------------------------------
@@ -74,7 +93,7 @@ add_executable(
 target_link_libraries(
     test_bfs
     PRIVATE
-    algokit_graph
+        algokit_graph
 )
 
 add_test(
@@ -94,10 +113,31 @@ add_executable(
 target_link_libraries(
     test_dfs
     PRIVATE
-    algokit_graph
+        algokit_graph
 )
 
 add_test(
     NAME DFS
     COMMAND test_dfs
 )
+
+#--------------------------------------------------
+#Connected Components Tests
+#--------------------------------------------------
+
+
+add_executable(
+    test_connected_components
+    tests/test_connected_components.cpp
+)
+
+target_link_libraries(
+     test_connected_components
+     PRIVATE
+         algokit_graph
+ )
+
+add_test(
+     NAME ConnectedComponents
+     COMMAND test_connected_components
+ )

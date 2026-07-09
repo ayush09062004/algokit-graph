@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include "algokit/dfs.hpp"
 #include "algokit/bfs.hpp"
+#include "algokit/connected_components.hpp"
 namespace algokit {
 
 //==========================
@@ -90,6 +91,18 @@ BFSResult Graph::bfs(std::size_t source) const
 DFSResult Graph::dfs(std::size_t source) const
 {
     return algokit::dfs(*this, source);
+}
+ConnectedComponentsResult
+Graph::connected_components() const
+{
+    if (directed_)
+    {
+        throw std::logic_error(
+            "Connected components are only defined for undirected graphs."
+        );
+    }
+
+    return algokit::connected_components(*this);
 }
 
 } // namespace algokit

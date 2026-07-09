@@ -4,7 +4,7 @@
 #include <vector>
 #include "algokit/dfs_result.hpp"
 #include "algokit/bfs_result.hpp"
-
+#include "algokit/connected_components_result.hpp"
 namespace algokit {
 
 using Weight = double;
@@ -37,6 +37,8 @@ public:
     BFSResult bfs(std::size_t source) const;
 
     DFSResult dfs(std::size_t source) const;
+
+    ConnectedComponentsResult connected_components() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

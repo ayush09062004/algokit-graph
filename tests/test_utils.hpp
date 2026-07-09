@@ -63,6 +63,18 @@ inline void print_success()
         }                                                                   \
     } while (0)
 
+
+#define EXPECT_TRUE(condition)                                     \
+    do                                                             \
+    {                                                              \
+        if (!(condition))                                          \
+        {                                                          \
+            throw std::runtime_error(                              \
+                "EXPECT_TRUE failed: " #condition                  \
+            );                                                     \
+        }                                                          \
+    } while (0)
+
 #define EXPECT_THROW(statement, exception_type)                 \
     do                                                          \
     {                                                           \
