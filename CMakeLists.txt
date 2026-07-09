@@ -26,13 +26,19 @@ enable_testing()
 add_library(
     algokit_graph
 
+    # Core
     cpp/src/graph.cpp
 
+    # BFS
     cpp/src/bfs.cpp
     cpp/src/bfs_result.cpp
 
+    # DFS
     cpp/src/dfs.cpp
     cpp/src/dfs_result.cpp
+
+    # Internal Engines
+    cpp/src/dfs_engine.cpp
 )
 
 target_include_directories(
