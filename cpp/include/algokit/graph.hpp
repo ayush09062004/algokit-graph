@@ -15,21 +15,12 @@
 #include "algokit/bellman_ford.hpp"
 #include "algokit/floyd_warshall.hpp"
 #include "algokit/floyd_warshall_result.hpp"
+#include "algokit/mst_result.hpp"
+#include "algokit/kruskal.hpp"
 namespace algokit {
 
 //using Weight = double;
 
-struct Edge {
-    std::size_t to;
-    Weight weight;
-};
-
-struct GraphEdge
-{
-    std::size_t from;
-    std::size_t to;
-    Weight weight;
-};
 
 class Graph {
 public:
@@ -81,6 +72,8 @@ public:
     ) const;
 
     FloydWarshallResult floyd_warshall() const;
+
+    MSTResult kruskal() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

@@ -121,6 +121,13 @@ add_library(
     cpp/src/disjoint_set.cpp
 
     #==========================
+    # Minimum Spanning Tree
+    #==========================
+
+    cpp/src/mst_result.cpp
+    cpp/src/kruskal.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -417,6 +424,26 @@ target_link_libraries(
 add_test(
     NAME DisjointSet
     COMMAND test_disjoint_set
+)
+
+#--------------------------------------------------
+# Kruskal Tests
+#--------------------------------------------------
+
+add_executable(
+    test_kruskal
+    tests/test_kruskal.cpp
+)
+
+target_link_libraries(
+    test_kruskal
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME Kruskal
+    COMMAND test_kruskal
 )
 
 #cmake -B build

@@ -11,6 +11,7 @@
 #include "algokit/dijkstra.hpp"
 #include "algokit/bellman_ford.hpp"
 #include "algokit/floyd_warshall.hpp"
+#include "algokit/kruskal.hpp"
 namespace algokit {
 
 //==========================
@@ -206,6 +207,12 @@ FloydWarshallResult
 Graph::floyd_warshall() const
 {
     return algokit::floyd_warshall(*this);
+}
+
+MSTResult
+Graph::kruskal() const
+{
+    return algokit::kruskal(*this);
 }
 
 } // namespace algokit

@@ -158,7 +158,47 @@ PYBIND11_MODULE(algokit, m)
         "component_count",
         &DisjointSet::component_count
     );
+
+
+    py::class_<GraphEdge>(
+        m,
+        "GraphEdge"
+    )
+
+    .def_readonly(
+        "from_vertex",
+        &GraphEdge::from
+    )
+
+    .def_readonly(
+        "to_vertex",
+        &GraphEdge::to
+    )
+
+    .def_readonly(
+        "weight",
+        &GraphEdge::weight
+    );
     
+    py::class_<MSTResult>(
+        m,
+        "MSTResult"
+    )
+
+    .def(
+        "total_weight",
+        &MSTResult::total_weight
+    )
+
+    .def(
+        "edge_count",
+        &MSTResult::edge_count
+    )
+
+    .def(
+        "edges",
+        &MSTResult::edges
+    );
 
     //==================================================
     // Graph
@@ -252,5 +292,10 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "floyd_warshall",
             &Graph::floyd_warshall
+        )
+
+        .def(
+            "kruskal",
+            &Graph::kruskal
         );
 }
