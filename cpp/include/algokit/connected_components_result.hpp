@@ -18,6 +18,8 @@ public:
 
     int component_id(std::size_t vertex) const;
 
+    const std::vector<int>&component_ids() const;
+
     const std::vector<std::vector<std::size_t>>&
     components() const;
 

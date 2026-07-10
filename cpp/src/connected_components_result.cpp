@@ -30,6 +30,12 @@ int ConnectedComponentsResult::component_id(
     return component_ids_[vertex];
 }
 
+const std::vector<int>&
+ConnectedComponentsResult::component_ids() const
+{
+    return component_ids_;
+}
+
 const std::vector<std::vector<std::size_t>>&
 ConnectedComponentsResult::components() const
 {

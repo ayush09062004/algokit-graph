@@ -93,7 +93,8 @@ PYBIND11_MODULE(algokit, m)
 
         Attributes:
             component_count (int): Number of connected components.
-            component_id (list[int]): Component ID for each vertex.
+            component_id (vertex: int) -> int: Component ID of a single vertex.
+            component_ids () -> list[int]: Returns the component ID for every vertex.
             components (list[list[int]]): List of vertices in each component.
         )doc")
         .def(
@@ -104,7 +105,14 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "component_id",
             &ConnectedComponentsResult::component_id,
+            py::arg("vertex"),
             "Returns the component ID for each vertex."
+        )
+        .def(
+            "component_ids",
+            &ConnectedComponentsResult::component_ids,
+            py::return_value_policy::reference_internal,
+            "Returns the component ID for every vertex."
         )
         .def(
             "components",
