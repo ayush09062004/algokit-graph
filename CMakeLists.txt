@@ -170,6 +170,11 @@ target_include_directories(
         cpp/include
 )
 
+install(
+    TARGETS algokit
+    LIBRARY DESTINATION .
+)
+
 #--------------------------------------------------
 # Demo Application
 #--------------------------------------------------
