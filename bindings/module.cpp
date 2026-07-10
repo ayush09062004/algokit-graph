@@ -161,6 +161,23 @@ PYBIND11_MODULE(algokit, m)
     );
 
 
+    py::class_<Edge>(
+    m,
+    "Edge"
+)
+
+.def_readonly(
+    "to_vertex",
+    &Edge::to
+)
+
+.def_readonly(
+    "weight",
+    &Edge::weight
+);
+
+
+
     py::class_<GraphEdge>(
         m,
         "GraphEdge"
@@ -238,10 +255,22 @@ PYBIND11_MODULE(algokit, m)
         )
 
         .def(
+            "edges",
+            &Graph::edges,
+            py::return_value_policy::reference_internal
+        )
+
+        .def(
+            "neighbors",
+            &Graph::neighbors,
+            py::arg("vertex"),
+            py::return_value_policy::reference_internal
+        )
+        .def(
             "add_edge",
             &Graph::add_edge,
-            py::arg("from"),
-            py::arg("to"),
+            py::arg("from_vertex"),
+            py::arg("to_vertex"),
             py::arg("weight") = 1.0
         )
 
@@ -278,7 +307,7 @@ PYBIND11_MODULE(algokit, m)
                     {
                         throw std::runtime_error(
                         "Each edge must contain either "
-                        "(from, to) or (from, to, weight)."
+                        "(from_vertex, to_vertex) or (from_vertex, to_vertex, weight)."
                         );
                     }
                 }
@@ -397,6 +426,12 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "prim",
             &Graph::prim
+        )
+
+        .def(
+            "transpose",
+            &Graph::transpose,
+            "Return the transpose of a directed graph."
         )
 
         .def(

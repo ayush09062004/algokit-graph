@@ -597,6 +597,100 @@ assert result.path_to(3) == [0,1,2,3]
 
 print("✓ Python list adjacency matrix passed")
 
+# ==================================================
+# Graph Inspection API
+# ==================================================
+
+banner("Graph Inspection API")
+
+g = algokit.Graph.directed(3)
+
+g.add_edge(0, 1, 5.0)
+g.add_edge(0, 2, 7.0)
+
+# -----------------------------------------
+# edges()
+# -----------------------------------------
+
+edges = g.edges()
+
+assert len(edges) == 2
+
+assert edges[0].from_vertex == 0
+assert edges[0].to_vertex == 1
+assert edges[0].weight == 5.0
+
+assert edges[1].from_vertex == 0
+assert edges[1].to_vertex == 2
+assert edges[1].weight == 7.0
+
+print("Edges:")
+
+for edge in edges:
+    print(
+        edge.from_vertex,
+        "->",
+        edge.to_vertex,
+        "(weight =",
+        edge.weight,
+        ")"
+    )
+
+# -----------------------------------------
+# neighbors()
+# -----------------------------------------
+
+neighbors = g.neighbors(0)
+
+assert len(neighbors) == 2
+
+assert neighbors[0].to_vertex == 1
+assert neighbors[0].weight == 5.0
+
+assert neighbors[1].to_vertex == 2
+assert neighbors[1].weight == 7.0
+
+print("\nNeighbors of vertex 0:")
+
+for edge in neighbors:
+    print(
+        "0 ->",
+        edge.to_vertex,
+        "(weight =",
+        edge.weight,
+        ")"
+    )
+
+# -----------------------------------------
+# transpose()
+# -----------------------------------------
+
+transpose = g.transpose()
+
+transpose_edges = transpose.edges()
+
+assert len(transpose_edges) == 2
+
+assert transpose_edges[0].from_vertex == 1
+assert transpose_edges[0].to_vertex == 0
+
+assert transpose_edges[1].from_vertex == 2
+assert transpose_edges[1].to_vertex == 0
+
+print("\nTranspose Edges:")
+
+for edge in transpose_edges:
+    print(
+        edge.from_vertex,
+        "->",
+        edge.to_vertex,
+        "(weight =",
+        edge.weight,
+        ")"
+    )
+
+print("✓ Graph inspection API passed")
+
 banner("SUCCESS")
 
 
