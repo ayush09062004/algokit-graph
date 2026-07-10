@@ -2,6 +2,22 @@ cmake_minimum_required(VERSION 3.20)
 
 cmake_policy(SET CMP0144 NEW) 
 
+option(ALGOKIT_SANITIZE "Enable sanitizers" OFF)
+
+if(ALGOKIT_SANITIZE)
+    add_compile_options(
+        -fsanitize=address
+        -fsanitize=undefined
+        -fno-omit-frame-pointer
+        -g
+        -O1
+    )
+
+    add_link_options(
+        -fsanitize=address
+        -fsanitize=undefined
+    )
+endif()
 
 project(
     AlgoKitGraph

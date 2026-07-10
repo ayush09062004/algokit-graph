@@ -1,0 +1,17 @@
+BFS 2 0.00747412
+DFS 1 0.0164207
+ConnectedComponents 3 0.00511524
+CycleDetection 3 0.00518431
+DirectedCycleDetection 3 0.00505708
+TopologicalSort 3 0.00513766
+KahnTopologicalSort 3 0.00499998
+ShortestPath 3 0.00513706
+Dijkstra 3 0.00493472
+BellmanFord 3 0.0053964
+FloydWarshall 3 0.00545441
+DisjointSet 3 0.00494794
+Kruskal 3 0.0077322
+Prim 3 0.00670838
+StronglyConnectedComponents 3 0.00658196
+Graph 3 0.00533651
+---

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=address -fsanitize=undefined CMakeFiles/test_cycle_detection.dir/tests/test_cycle_detection.cpp.o -o test_cycle_detection  libalgokit_graph.a 

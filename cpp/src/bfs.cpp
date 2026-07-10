@@ -8,8 +8,8 @@ BFSResult bfs(
     const Graph& graph,
     std::size_t source)
 {
+    graph.neighbors(source);
     std::vector<std::size_t> order;
-
     std::vector<int> distance(
         graph.vertex_count(),
         -1);

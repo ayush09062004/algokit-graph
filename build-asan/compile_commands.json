@@ -1,0 +1,266 @@
+[
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/graph.cpp.o -c /workspaces/algokit-graph/cpp/src/graph.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/graph.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/graph.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/bfs.cpp.o -c /workspaces/algokit-graph/cpp/src/bfs.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/bfs.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/bfs.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/bfs_result.cpp.o -c /workspaces/algokit-graph/cpp/src/bfs_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/bfs_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/bfs_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/dfs.cpp.o -c /workspaces/algokit-graph/cpp/src/dfs.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/dfs.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/dfs.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/dfs_result.cpp.o -c /workspaces/algokit-graph/cpp/src/dfs_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/dfs_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/dfs_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/connected_components.cpp.o -c /workspaces/algokit-graph/cpp/src/connected_components.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/connected_components.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/connected_components.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/connected_components_result.cpp.o -c /workspaces/algokit-graph/cpp/src/connected_components_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/connected_components_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/connected_components_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/cycle_detection.cpp.o -c /workspaces/algokit-graph/cpp/src/cycle_detection.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/cycle_detection.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/cycle_detection.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/directed_cycle_detection.cpp.o -c /workspaces/algokit-graph/cpp/src/directed_cycle_detection.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/directed_cycle_detection.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/directed_cycle_detection.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/topological_sort.cpp.o -c /workspaces/algokit-graph/cpp/src/topological_sort.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/topological_sort.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/topological_sort.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/topological_sort_result.cpp.o -c /workspaces/algokit-graph/cpp/src/topological_sort_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/topological_sort_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/topological_sort_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/kahn_topological_sort.cpp.o -c /workspaces/algokit-graph/cpp/src/kahn_topological_sort.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/kahn_topological_sort.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/kahn_topological_sort.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/kahn_topological_sort_result.cpp.o -c /workspaces/algokit-graph/cpp/src/kahn_topological_sort_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/kahn_topological_sort_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/kahn_topological_sort_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/shortest_path.cpp.o -c /workspaces/algokit-graph/cpp/src/shortest_path.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/shortest_path.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/shortest_path.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/shortest_path_result.cpp.o -c /workspaces/algokit-graph/cpp/src/shortest_path_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/shortest_path_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/shortest_path_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/dijkstra.cpp.o -c /workspaces/algokit-graph/cpp/src/dijkstra.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/dijkstra.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/dijkstra.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/bellman_ford.cpp.o -c /workspaces/algokit-graph/cpp/src/bellman_ford.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/bellman_ford.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/bellman_ford.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/floyd_warshall.cpp.o -c /workspaces/algokit-graph/cpp/src/floyd_warshall.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/floyd_warshall.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/floyd_warshall.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/floyd_warshall_result.cpp.o -c /workspaces/algokit-graph/cpp/src/floyd_warshall_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/floyd_warshall_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/floyd_warshall_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/disjoint_set.cpp.o -c /workspaces/algokit-graph/cpp/src/disjoint_set.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/disjoint_set.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/disjoint_set.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/mst_result.cpp.o -c /workspaces/algokit-graph/cpp/src/mst_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/mst_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/mst_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/kruskal.cpp.o -c /workspaces/algokit-graph/cpp/src/kruskal.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/kruskal.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/kruskal.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/prim.cpp.o -c /workspaces/algokit-graph/cpp/src/prim.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/prim.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/prim.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/strongly_connected_components.cpp.o -c /workspaces/algokit-graph/cpp/src/strongly_connected_components.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/strongly_connected_components.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/strongly_connected_components.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/strongly_connected_components_result.cpp.o -c /workspaces/algokit-graph/cpp/src/strongly_connected_components_result.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/strongly_connected_components_result.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/strongly_connected_components_result.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fPIC -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/algokit_graph.dir/cpp/src/dfs_engine.cpp.o -c /workspaces/algokit-graph/cpp/src/dfs_engine.cpp",
+  "file": "/workspaces/algokit-graph/cpp/src/dfs_engine.cpp",
+  "output": "CMakeFiles/algokit_graph.dir/cpp/src/dfs_engine.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/graph_demo.dir/app/main.cpp.o -c /workspaces/algokit-graph/app/main.cpp",
+  "file": "/workspaces/algokit-graph/app/main.cpp",
+  "output": "CMakeFiles/graph_demo.dir/app/main.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_bfs.dir/tests/test_bfs.cpp.o -c /workspaces/algokit-graph/tests/test_bfs.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_bfs.cpp",
+  "output": "CMakeFiles/test_bfs.dir/tests/test_bfs.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_dfs.dir/tests/test_dfs.cpp.o -c /workspaces/algokit-graph/tests/test_dfs.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_dfs.cpp",
+  "output": "CMakeFiles/test_dfs.dir/tests/test_dfs.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_connected_components.dir/tests/test_connected_components.cpp.o -c /workspaces/algokit-graph/tests/test_connected_components.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_connected_components.cpp",
+  "output": "CMakeFiles/test_connected_components.dir/tests/test_connected_components.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_cycle_detection.dir/tests/test_cycle_detection.cpp.o -c /workspaces/algokit-graph/tests/test_cycle_detection.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_cycle_detection.cpp",
+  "output": "CMakeFiles/test_cycle_detection.dir/tests/test_cycle_detection.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_directed_cycle_detection.dir/tests/test_directed_cycle_detection.cpp.o -c /workspaces/algokit-graph/tests/test_directed_cycle_detection.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_directed_cycle_detection.cpp",
+  "output": "CMakeFiles/test_directed_cycle_detection.dir/tests/test_directed_cycle_detection.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_topological_sort.dir/tests/test_topological_sort.cpp.o -c /workspaces/algokit-graph/tests/test_topological_sort.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_topological_sort.cpp",
+  "output": "CMakeFiles/test_topological_sort.dir/tests/test_topological_sort.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_kahn_topological_sort.dir/tests/test_kahn_topological_sort.cpp.o -c /workspaces/algokit-graph/tests/test_kahn_topological_sort.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_kahn_topological_sort.cpp",
+  "output": "CMakeFiles/test_kahn_topological_sort.dir/tests/test_kahn_topological_sort.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_shortest_path.dir/tests/test_shortest_path.cpp.o -c /workspaces/algokit-graph/tests/test_shortest_path.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_shortest_path.cpp",
+  "output": "CMakeFiles/test_shortest_path.dir/tests/test_shortest_path.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++ -Dalgokit_EXPORTS -I/workspaces/algokit-graph/cpp/include -isystem /home/codespace/.python/current/include/python3.12 -isystem /home/codespace/.python/current/lib/python3.12/site-packages/pybind11/include -std=gnu++17 -fPIC -fvisibility=hidden -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -flto=auto -fno-fat-lto-objects -o CMakeFiles/algokit.dir/bindings/module.cpp.o -c /workspaces/algokit-graph/bindings/module.cpp",
+  "file": "/workspaces/algokit-graph/bindings/module.cpp",
+  "output": "CMakeFiles/algokit.dir/bindings/module.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_dijkstra.dir/tests/test_dijkstra.cpp.o -c /workspaces/algokit-graph/tests/test_dijkstra.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_dijkstra.cpp",
+  "output": "CMakeFiles/test_dijkstra.dir/tests/test_dijkstra.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_bellman_ford.dir/tests/test_bellman_ford.cpp.o -c /workspaces/algokit-graph/tests/test_bellman_ford.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_bellman_ford.cpp",
+  "output": "CMakeFiles/test_bellman_ford.dir/tests/test_bellman_ford.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_floyd_warshall.dir/tests/test_floyd_warshall.cpp.o -c /workspaces/algokit-graph/tests/test_floyd_warshall.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_floyd_warshall.cpp",
+  "output": "CMakeFiles/test_floyd_warshall.dir/tests/test_floyd_warshall.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_disjoint_set.dir/tests/test_disjoint_set.cpp.o -c /workspaces/algokit-graph/tests/test_disjoint_set.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_disjoint_set.cpp",
+  "output": "CMakeFiles/test_disjoint_set.dir/tests/test_disjoint_set.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_kruskal.dir/tests/test_kruskal.cpp.o -c /workspaces/algokit-graph/tests/test_kruskal.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_kruskal.cpp",
+  "output": "CMakeFiles/test_kruskal.dir/tests/test_kruskal.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_prim.dir/tests/test_prim.cpp.o -c /workspaces/algokit-graph/tests/test_prim.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_prim.cpp",
+  "output": "CMakeFiles/test_prim.dir/tests/test_prim.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_strongly_connected_components.dir/tests/test_strongly_connected_components.cpp.o -c /workspaces/algokit-graph/tests/test_strongly_connected_components.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_strongly_connected_components.cpp",
+  "output": "CMakeFiles/test_strongly_connected_components.dir/tests/test_strongly_connected_components.cpp.o"
+},
+{
+  "directory": "/workspaces/algokit-graph/build-asan",
+  "command": "/usr/bin/c++  -I/workspaces/algokit-graph/cpp/include -std=gnu++17 -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -g -O1 -o CMakeFiles/test_graph.dir/tests/test_graph.cpp.o -c /workspaces/algokit-graph/tests/test_graph.cpp",
+  "file": "/workspaces/algokit-graph/tests/test_graph.cpp",
+  "output": "CMakeFiles/test_graph.dir/tests/test_graph.cpp.o"
+}
+]

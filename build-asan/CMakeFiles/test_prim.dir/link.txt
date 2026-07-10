@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=address -fsanitize=undefined CMakeFiles/test_prim.dir/tests/test_prim.cpp.o -o test_prim  libalgokit_graph.a 
