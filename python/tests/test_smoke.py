@@ -410,6 +410,47 @@ for edge in mst.edges():
 
 print("✓ Prim passed")
 
+# --------------------------------------------------
+# Strongly Connected Components
+# --------------------------------------------------
+
+banner("Strongly Connected Components")
+
+g = algokit.Graph.directed(8)
+
+g.add_edge(0, 1)
+g.add_edge(1, 2)
+g.add_edge(2, 0)
+
+g.add_edge(2, 3)
+
+g.add_edge(3, 4)
+g.add_edge(4, 5)
+g.add_edge(5, 3)
+
+g.add_edge(6, 7)
+g.add_edge(7, 6)
+
+scc = g.strongly_connected_components()
+
+assert scc.component_count() == 3
+
+print("Component Count:", scc.component_count())
+
+print("\nComponent IDs")
+
+for vertex in range(8):
+    print(
+        f"{vertex} -> {scc.component_id(vertex)}"
+    )
+
+print("\nComponents")
+
+for component in scc.components():
+    print(component)
+
+print("✓ Strongly Connected Components passed")
+
 banner("SUCCESS")
 
 print("🎉 ALL PYTHON TESTS PASSED!")

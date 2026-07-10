@@ -129,6 +129,13 @@ add_library(
     cpp/src/prim.cpp
 
     #==========================
+    # Strongly Connected Components
+    #==========================
+
+    cpp/src/strongly_connected_components.cpp
+    cpp/src/strongly_connected_components_result.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -465,6 +472,26 @@ target_link_libraries(
 add_test(
     NAME Prim
     COMMAND test_prim
+)
+
+#--------------------------------------------------
+# Strongly Connected Components Tests
+#--------------------------------------------------
+
+add_executable(
+    test_strongly_connected_components
+    tests/test_strongly_connected_components.cpp
+)
+
+target_link_libraries(
+    test_strongly_connected_components
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME StronglyConnectedComponents
+    COMMAND test_strongly_connected_components
 )
 
 #cmake -B build

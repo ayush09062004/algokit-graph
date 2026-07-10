@@ -3,6 +3,7 @@
 
 #include "algokit/graph.hpp"
 #include "algokit/disjoint_set.hpp"
+#include "algokit/strongly_connected_components_result.hpp"
 
 namespace py = pybind11;
 
@@ -200,6 +201,26 @@ PYBIND11_MODULE(algokit, m)
         &MSTResult::edges
     );
 
+    py::class_<StronglyConnectedComponentsResult>(
+        m,
+        "StronglyConnectedComponentsResult"
+    )
+
+    .def(
+        "component_count",
+        &StronglyConnectedComponentsResult::component_count
+    )
+
+    .def(
+        "component_id",
+        &StronglyConnectedComponentsResult::component_id
+    )
+
+    .def(
+        "components",
+        &StronglyConnectedComponentsResult::components
+    );
+
     //==================================================
     // Graph
     //==================================================
@@ -302,5 +323,10 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "prim",
             &Graph::prim
+        )
+
+        .def(
+            "strongly_connected_components",
+            &Graph::strongly_connected_components
         );
 }

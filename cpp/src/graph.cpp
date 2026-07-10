@@ -13,6 +13,7 @@
 #include "algokit/floyd_warshall.hpp"
 #include "algokit/kruskal.hpp"
 #include "algokit/prim.hpp"
+#include "algokit/strongly_connected_components.hpp"
 namespace algokit {
 
 //==========================
@@ -220,6 +221,38 @@ MSTResult
 Graph::prim() const
 {
     return algokit::prim(*this);
+}
+
+Graph
+Graph::transpose() const
+{
+    if (!directed_)
+    {
+        throw std::logic_error(
+            "Transpose is only supported for directed graphs."
+        );
+    }
+
+    Graph result = Graph::directed(vertex_count_);
+
+    for (const auto& edge : edges_)
+    {
+        result.add_edge(
+            edge.to,
+            edge.from,
+            edge.weight
+        );
+    }
+
+    return result;
+}
+
+StronglyConnectedComponentsResult
+Graph::strongly_connected_components() const
+{
+    return algokit::strongly_connected_components(
+        *this
+    );
 }
 
 } // namespace algokit

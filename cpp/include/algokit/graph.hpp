@@ -18,6 +18,8 @@
 #include "algokit/mst_result.hpp"
 #include "algokit/kruskal.hpp"
 #include "algokit/prim.hpp"
+#include "algokit/strongly_connected_components.hpp"
+#include "algokit/strongly_connected_components_result.hpp"
 namespace algokit {
 
 //using Weight = double;
@@ -77,6 +79,11 @@ public:
     MSTResult kruskal() const;
 
     MSTResult prim() const;
+
+    Graph transpose() const;
+
+    StronglyConnectedComponentsResult
+    strongly_connected_components() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;
