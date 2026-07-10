@@ -6,7 +6,7 @@ requires = [
 build-backend = "scikit_build_core.build"
 
 [project]
-name = "algokit"
+name = "algokit-graph"
 version = "0.1.0"
 description = "Modern Graph Algorithms Library"
 authors = [
