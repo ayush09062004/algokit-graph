@@ -451,6 +451,154 @@ for component in scc.components():
 
 print("✓ Strongly Connected Components passed")
 
+# ==================================================
+# Bulk Graph Construction
+# ==================================================
+
+banner("Bulk Graph Construction")
+
+# -----------------------------------------
+# Unweighted Directed Graph
+# -----------------------------------------
+
+g = algokit.Graph.directed(5)
+
+g.add_edges([
+    (0, 1),
+    (1, 2),
+    (2, 3),
+    (3, 4)
+])
+
+assert g.edge_count() == 4
+
+print("BFS:", g.bfs(0).order())
+print("DFS:", g.dfs(0).order())
+
+sp = g.shortest_path(0)
+
+assert sp.distance(4) == 4
+assert sp.path_to(4) == [0, 1, 2, 3, 4]
+
+print("Shortest Path:", sp.path_to(4))
+
+print("✓ Unweighted bulk graph passed")
+
+
+# -----------------------------------------
+# Weighted Directed Graph
+# -----------------------------------------
+
+g = algokit.Graph.directed(5)
+
+g.add_edges([
+    (0, 1, 4.0),
+    (0, 2, 1.0),
+    (2, 1, 2.0),
+    (1, 3, 1.0),
+    (2, 3, 5.0),
+    (3, 4, 3.0)
+])
+
+assert g.edge_count() == 6
+
+dj = g.dijkstra(0)
+
+print("Dijkstra distance:", dj.distance(4))
+print("Dijkstra path:", dj.path_to(4))
+
+assert dj.distance(4) == 7.0
+assert dj.path_to(4) == [0, 2, 1, 3, 4]
+
+bf = g.bellman_ford(0)
+
+assert bf.distance(4) == 7.0
+assert bf.path_to(4) == [0, 2, 1, 3, 4]
+
+print("✓ Weighted bulk graph passed")
+
+
+# -----------------------------------------
+# Undirected Graph
+# -----------------------------------------
+
+g = algokit.Graph.undirected(4)
+
+g.add_edges([
+    (0, 1),
+    (1, 2),
+    (2, 3)
+])
+
+assert g.has_cycle() is False
+
+cc = g.connected_components()
+
+assert cc.component_count() == 1
+
+print("Connected Components:", cc.components())
+
+print("✓ Undirected bulk graph passed")
+
+
+# -----------------------------------------
+# Minimum Spanning Tree
+# -----------------------------------------
+
+g = algokit.Graph.undirected(4)
+
+g.add_edges([
+    (0, 1, 1),
+    (0, 2, 4),
+    (1, 2, 2),
+    (1, 3, 5),
+    (2, 3, 3)
+])
+
+kr = g.kruskal()
+pr = g.prim()
+
+print("Kruskal:", kr.total_weight())
+print("Prim:", pr.total_weight())
+
+assert kr.total_weight() == 6
+assert pr.total_weight() == 6
+
+print("✓ MST bulk graph passed")
+
+
+print("\n🎉 Bulk Graph Construction tests passed!\n")
+
+banner("Adjacency Matrix")
+
+g = algokit.Graph.directed(4)
+
+matrix = [
+
+    [0,1,0,0],
+
+    [0,0,2,0],
+
+    [0,0,0,3],
+
+    [0,0,0,0]
+
+]
+
+g.add_adjacency_matrix(matrix)
+
+assert g.edge_count() == 3
+
+result = g.dijkstra(0)
+
+assert result.distance(3) == 6
+
+assert result.path_to(3) == [0,1,2,3]
+
+print("✓ Python list adjacency matrix passed")
+
 banner("SUCCESS")
+
+
 
 print("🎉 ALL PYTHON TESTS PASSED!")

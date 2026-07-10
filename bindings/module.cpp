@@ -246,6 +246,80 @@ PYBIND11_MODULE(algokit, m)
         )
 
         .def(
+            "add_edges",
+            [](
+            Graph& graph,
+            py::iterable iterable)
+            {
+                std::vector<GraphEdge> edges;
+
+                for (auto item : iterable)
+                {
+                    py::tuple t =
+                    py::cast<py::tuple>(item);
+
+                    if (t.size() == 2)
+                    {
+                        edges.push_back({
+                        t[0].cast<std::size_t>(),
+                        t[1].cast<std::size_t>(),
+                        1.0
+                        });
+                    }
+                    else if (t.size() == 3)
+                    {
+                        edges.push_back({
+                        t[0].cast<std::size_t>(),
+                        t[1].cast<std::size_t>(),
+                        t[2].cast<Weight>()
+                        });
+                    }
+                    else
+                    {
+                        throw std::runtime_error(
+                        "Each edge must contain either "
+                        "(from, to) or (from, to, weight)."
+                        );
+                    }
+                }
+
+                graph.add_edges(edges);
+            }
+        )
+        .def(
+    "add_adjacency_matrix",
+    [](
+        Graph& graph,
+        py::iterable matrix)
+    {
+        std::vector<
+            std::vector<Weight>
+        > adjacency;
+
+        for (auto row_obj : matrix)
+        {
+            py::iterable row =
+                py::cast<py::iterable>(row_obj);
+
+            std::vector<Weight> values;
+
+            for (auto value : row)
+            {
+                values.push_back(
+                    py::cast<Weight>(value)
+                );
+            }
+
+            adjacency.push_back(values);
+        }
+
+        graph.add_adjacency_matrix(
+            adjacency
+        );
+    }
+)
+
+        .def(
             "vertex_count",
             &Graph::vertex_count
         )

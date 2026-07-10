@@ -1,0 +1,72 @@
+site_name: AlgoKit Graph
+site_description: Modern C++ Graph Algorithms Library
+site_author: Ayush Raj
+
+repo_url: https://github.com/<your-username>/algokit-graph
+repo_name: algokit-graph
+
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+
+    - search.highlight
+    - search.suggest
+
+    - content.code.copy
+
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables
+
+nav:
+
+  - Home: index.md
+
+  - Getting Started:
+      - getting_started.md
+
+  - Core:
+      - graph.md
+      - architecture.md
+
+  - Traversal:
+      - traversal/bfs.md
+      - traversal/dfs.md
+
+  - Connectivity:
+      - connectivity/connected_components.md
+      - connectivity/strongly_connected_components.md
+
+  - Cycle Detection:
+      - cycles/cycle_detection.md
+      - cycles/directed_cycle_detection.md
+
+  - DAG:
+      - dag/topological_sort.md
+      - dag/kahn_topological_sort.md
+
+  - Shortest Paths:
+      - shortest_paths/shortest_path.md
+      - shortest_paths/dijkstra.md
+      - shortest_paths/bellman_ford.md
+      - shortest_paths/floyd_warshall.md
+
+  - Minimum Spanning Tree:
+      - mst/disjoint_set.md
+      - mst/kruskal.md
+      - mst/prim.md
+
+  - Python:
+      - python.md
+
+  - Roadmap:
+      - roadmap.md

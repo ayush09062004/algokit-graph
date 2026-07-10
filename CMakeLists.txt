@@ -494,6 +494,26 @@ add_test(
     COMMAND test_strongly_connected_components
 )
 
+#--------------------------------------------------
+# Graph Tests
+#--------------------------------------------------
+
+add_executable(
+    test_graph
+    tests/test_graph.cpp
+)
+
+target_link_libraries(
+    test_graph
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME Graph
+    COMMAND test_graph
+)
+
 #cmake -B build
 #cmake --build build
 #ctest --test-dir build --output-on-failure 

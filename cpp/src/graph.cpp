@@ -74,6 +74,66 @@ void Graph::add_edge(
     ++edge_count_;
 }
 
+void Graph::add_edges(const std::vector<GraphEdge>& edges)
+{
+    edges_.reserve(edges_.size() + edges.size());
+
+    for (const auto& edge : edges)
+    {
+        add_edge(edge.from, edge.to, edge.weight);
+    }
+}
+
+void
+Graph::add_adjacency_matrix(
+    const std::vector<std::vector<Weight>>& matrix)
+{
+    if (matrix.size() != vertex_count_)
+    {
+        throw std::invalid_argument(
+            "Adjacency matrix size does not match vertex count."
+        );
+    }
+
+    for (const auto& row : matrix)
+    {
+        if (row.size() != vertex_count_)
+        {
+            throw std::invalid_argument(
+                "Adjacency matrix must be square."
+            );
+        }
+    }
+
+    std::vector<GraphEdge> edges;
+
+    // Avoid repeated reallocations
+    edges.reserve(vertex_count_ * vertex_count_);
+
+    for (std::size_t i = 0; i < vertex_count_; ++i)
+    {
+        std::size_t start = directed_ ? 0 : i + 1;
+
+        for (std::size_t j = start;
+             j < vertex_count_;
+             ++j)
+        {
+            if (matrix[i][j] == 0)
+            {
+                continue;
+            }
+
+            edges.push_back({
+                i,
+                j,
+                matrix[i][j]
+            });
+        }
+    }
+
+    add_edges(edges);
+}
+
 //==========================
 // Getters
 //==========================

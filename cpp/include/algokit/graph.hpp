@@ -37,6 +37,14 @@ public:
         Weight weight = 1.0
     );
 
+    void add_edges(
+    const std::vector<GraphEdge>& edges
+    );
+
+    void add_adjacency_matrix(
+    const std::vector<std::vector<Weight>>& matrix
+    );
+
     std::size_t vertex_count() const;
 
     std::size_t edge_count() const;
