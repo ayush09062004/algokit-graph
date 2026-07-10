@@ -1,85 +1,214 @@
 # AlgoKit Graph
 
-> A modern, high-performance C++ graph algorithms library with planned Python bindings.
+<p align="center">
 
-AlgoKit Graph aims to provide clean, reusable, and well-tested implementations of fundamental graph algorithms while maintaining an intuitive API for developers, students, researchers, and competitive programmers.
+A modern **C++17 Graph Algorithms Library** with **Python bindings**, designed for education, competitive programming, research, and production use.
 
----
+[![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)]()
+[![Python](https://img.shields.io/badge/Python-3.10%2B-yellow.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
-# Features
-
-## Graph
-
-- ✅ Directed Graph
-- ✅ Undirected Graph
-- ✅ Weighted Edges
-
-## Traversal
-
-- ✅ Breadth First Search (BFS)
-- ✅ Depth First Search (DFS)
-
-## Connectivity
-
-- ✅ Connected Components
+</p>
 
 ---
 
-# Example
+## Features
+
+### Graph Types
+
+- ✅ Directed Graphs
+- ✅ Undirected Graphs
+- ✅ Weighted Graphs
+- ✅ Unweighted Graphs
+
+---
+
+## Implemented Algorithms
+
+| Category | Algorithm | C++ | Python | Tested |
+|----------|-----------|:---:|:------:|:------:|
+| Traversal | Breadth First Search (BFS) | ✅ | ✅ | ✅ |
+| Traversal | Depth First Search (DFS) | ✅ | ✅ | ✅ |
+| Connectivity | Connected Components | ✅ | ✅ | ✅ |
+| Connectivity | Strongly Connected Components (Kosaraju) | ✅ | ✅ | ✅ |
+| Cycle Detection | Undirected Cycle Detection | ✅ | ✅ | ✅ |
+| Cycle Detection | Directed Cycle Detection | ✅ | ✅ | ✅ |
+| DAG | Topological Sort (DFS) | ✅ | ✅ | ✅ |
+| DAG | Kahn's Topological Sort | ✅ | ✅ | ✅ |
+| Shortest Paths | BFS Shortest Path | ✅ | ✅ | ✅ |
+| Shortest Paths | Dijkstra | ✅ | ✅ | ✅ |
+| Shortest Paths | Bellman-Ford | ✅ | ✅ | ✅ |
+| Shortest Paths | Floyd-Warshall | ✅ | ✅ | ✅ |
+| Minimum Spanning Tree | Kruskal | ✅ | ✅ | ✅ |
+| Minimum Spanning Tree | Prim | ✅ | ✅ | ✅ |
+| Data Structures | Disjoint Set Union (Union-Find) | ✅ | ✅ | ✅ |
+
+---
+
+# Library Architecture
+
+```
+Graph
+ │
+ ├── Traversal
+ │      ├── BFS
+ │      └── DFS
+ │
+ ├── Connectivity
+ │      ├── Connected Components
+ │      └── Strongly Connected Components
+ │
+ ├── Cycle Detection
+ │      ├── Undirected
+ │      └── Directed
+ │
+ ├── DAG Algorithms
+ │      ├── Topological Sort
+ │      └── Kahn
+ │
+ ├── Shortest Paths
+ │      ├── BFS
+ │      ├── Dijkstra
+ │      ├── Bellman-Ford
+ │      └── Floyd-Warshall
+ │
+ └── Minimum Spanning Trees
+        ├── Kruskal
+        └── Prim
+
+DisjointSet
+```
+
+---
+
+# Quick C++ Example
 
 ```cpp
 #include <iostream>
-
 #include "algokit/graph.hpp"
 
 using namespace algokit;
 
 int main()
 {
-    Graph graph = Graph::undirected(6);
+    Graph graph = Graph::directed(5);
 
-    graph.add_edge(0,1);
-    graph.add_edge(1,2);
-    graph.add_edge(3,4);
+    graph.add_edge(0, 1);
+    graph.add_edge(1, 2);
+    graph.add_edge(2, 3);
+    graph.add_edge(3, 4);
 
-    auto result = graph.connected_components();
+    auto bfs = graph.bfs(0);
 
-    std::cout
-        << "Connected Components : "
-        << result.component_count()
-        << '\n';
+    for (auto v : bfs.order())
+        std::cout << v << " ";
+
+    return 0;
 }
 ```
 
-Output
+---
 
-```text
-Connected Components : 3
+# Quick Python Example
+
+```python
+import algokit
+
+graph = algokit.Graph.directed(5)
+
+graph.add_edge(0, 1)
+graph.add_edge(1, 2)
+graph.add_edge(2, 3)
+graph.add_edge(3, 4)
+
+bfs = graph.bfs(0)
+
+print(bfs.order())
 ```
 
 ---
 
-# Build
+# Shortest Path Example
 
-```bash
-cmake -B build
-cmake --build build
+```cpp
+Graph graph = Graph::directed(5);
+
+graph.add_edge(0,1,2);
+graph.add_edge(1,2,5);
+graph.add_edge(0,3,1);
+graph.add_edge(3,4,2);
+graph.add_edge(4,2,1);
+
+auto result = graph.dijkstra(0);
+
+std::cout << result.distance(2);
 ```
 
 ---
 
-# Run Demo
+# Minimum Spanning Tree Example
 
-```bash
-./build/graph_demo
+```cpp
+Graph graph = Graph::undirected(4);
+
+graph.add_edge(0,1,1);
+graph.add_edge(1,2,2);
+graph.add_edge(2,3,3);
+graph.add_edge(0,3,5);
+
+auto mst = graph.kruskal();
+
+std::cout << mst.total_weight();
 ```
 
 ---
 
-# Run Tests
+# Python Bindings
 
-```bash
-ctest --test-dir build --output-on-failure
+Every implemented algorithm is available directly from Python.
+
+```python
+graph.bfs()
+
+graph.dfs()
+
+graph.connected_components()
+
+graph.strongly_connected_components()
+
+graph.has_cycle()
+
+graph.has_directed_cycle()
+
+graph.topological_sort()
+
+graph.kahn_topological_sort()
+
+graph.shortest_path()
+
+graph.dijkstra()
+
+graph.bellman_ford()
+
+graph.floyd_warshall()
+
+graph.kruskal()
+
+graph.prim()
+```
+
+Data structures
+
+```python
+dsu = algokit.DisjointSet(10)
+
+dsu.unite(0,1)
+
+dsu.connected(0,1)
+
+dsu.component_size(0)
+
+dsu.component_count()
 ```
 
 ---
@@ -90,87 +219,108 @@ ctest --test-dir build --output-on-failure
 algokit-graph/
 
 ├── app/
+│
 ├── bindings/
+│
 ├── cpp/
 │   ├── include/
 │   └── src/
+│
+├── python/
+│
 ├── tests/
-├── examples/
-└── docs/
+│
+├── docs/
+│
+├── CMakeLists.txt
+│
+└── README.md
 ```
 
 ---
 
-# Implemented Algorithms
+# Complexity Summary
 
-| Category | Algorithm | Status |
-|-----------|-----------|--------|
-| Graph | Graph Class | ✅ |
-| Traversal | Breadth First Search | ✅ |
-| Traversal | Depth First Search | ✅ |
-| Connectivity | Connected Components | ✅ |
-
----
-
-# Roadmap
-
-## Graph Traversal
-
-- ✅ BFS
-- ✅ DFS
-
-## Graph Connectivity
-
-- ✅ Connected Components
-- ⏳ Cycle Detection (Undirected)
-- ⏳ Cycle Detection (Directed)
-
-## DAG Algorithms
-
-- ⏳ Topological Sort (DFS)
-- ⏳ Kahn's Algorithm
-
-## Shortest Paths
-
-- ⏳ Dijkstra
-- ⏳ Bellman-Ford
-- ⏳ Floyd-Warshall
-
-## Minimum Spanning Tree
-
-- ⏳ Disjoint Set Union (DSU)
-- ⏳ Kruskal
-- ⏳ Prim
-
-## Advanced Algorithms
-
-- ⏳ Strongly Connected Components
-- ⏳ Bridges
-- ⏳ Articulation Points
-- ⏳ Euler Tour
+| Algorithm | Time Complexity |
+|------------|----------------|
+| BFS | O(V + E) |
+| DFS | O(V + E) |
+| Connected Components | O(V + E) |
+| Strongly Connected Components | O(V + E) |
+| Cycle Detection | O(V + E) |
+| Topological Sort | O(V + E) |
+| Kahn's Algorithm | O(V + E) |
+| Shortest Path (BFS) | O(V + E) |
+| Dijkstra | O(E log V) |
+| Bellman-Ford | O(VE) |
+| Floyd-Warshall | O(V³) |
+| Kruskal | O(E log E) |
+| Prim | O(E log V) |
+| Disjoint Set Operations | O(α(N)) |
 
 ---
 
 # Testing
 
-Every algorithm in AlgoKit includes dedicated unit tests.
+AlgoKit includes comprehensive unit tests for every implemented algorithm.
 
-Current test coverage includes:
+```bash
+cmake -B build
 
-- ✅ Graph
-- ✅ BFS
-- ✅ DFS
-- ✅ Connected Components
+cmake --build build
+
+ctest --test-dir build --output-on-failure
+```
 
 ---
 
-# Version
+# Roadmap
 
-Current Version
+## Completed
 
-```
-v0.1.0
-```
+- ✅ Graph Data Structure
+- ✅ Python Bindings
+- ✅ BFS
+- ✅ DFS
+- ✅ Connected Components
+- ✅ Strongly Connected Components
+- ✅ Cycle Detection
+- ✅ Topological Sort
+- ✅ Kahn's Algorithm
+- ✅ BFS Shortest Path
+- ✅ Dijkstra
+- ✅ Bellman-Ford
+- ✅ Floyd-Warshall
+- ✅ Disjoint Set Union
+- ✅ Kruskal
+- ✅ Prim
+
+## In Progress
+
+- 🚧 Bridges (Tarjan)
+
+- 🚧 Articulation Points (Tarjan)
+
+## Future
+
+- Maximum Flow
+- Edmonds-Karp
+- Dinic
+- Johnson's Algorithm
+- A* Search
+- Euler Tour
+- Lowest Common Ancestor
+- Binary Lifting
+- Hopcroft-Karp
+- Hungarian Algorithm
+
+---
+
+# Contributing
+
+Contributions, bug reports, feature requests, and documentation improvements are welcome.
+
+Please open an issue or submit a pull request.
 
 ---
 
