@@ -7,8 +7,9 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "algokit-graph"
-version = "0.1.0"
+version = "1.0.0"
 description = "Modern Graph Algorithms Library"
+readme = "README.md"
 authors = [
     { name = "Ayush Raj" }
 ]
