@@ -1,10 +1,17 @@
 cmake_minimum_required(VERSION 3.20)
 
+cmake_policy(SET CMP0144 NEW) 
+
+
 project(
     AlgoKitGraph
     VERSION 0.1.0
     LANGUAGES CXX
 )
+
+set(PYBIND11_FINDPYTHON ON)
+
+find_package(Python REQUIRED COMPONENTS Interpreter Development)
 
 find_package(pybind11 CONFIG REQUIRED)
 
@@ -14,7 +21,7 @@ find_package(pybind11 CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #--------------------------------------------------
 # Enable Testing
 #--------------------------------------------------
@@ -87,6 +94,18 @@ add_library(
 
     cpp/src/shortest_path.cpp
     cpp/src/shortest_path_result.cpp
+
+    #==========================
+    # Dijkstra
+    #==========================
+
+    cpp/src/dijkstra.cpp
+
+    #==========================
+    # Bellman-Ford
+    #==========================
+
+    cpp/src/bellman_ford.cpp
 
     #==========================
     # Internal Engines
@@ -305,6 +324,46 @@ target_include_directories(
     algokit
     PRIVATE
     cpp/include
+)
+
+#--------------------------------------------------
+# Dijkstra Tests
+#--------------------------------------------------
+
+add_executable(
+    test_dijkstra
+    tests/test_dijkstra.cpp
+)
+
+target_link_libraries(
+    test_dijkstra
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME Dijkstra
+    COMMAND test_dijkstra
+)
+
+#--------------------------------------------------
+# Bellman-Ford Tests
+#--------------------------------------------------
+
+add_executable(
+    test_bellman_ford
+    tests/test_bellman_ford.cpp
+)
+
+target_link_libraries(
+    test_bellman_ford
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME BellmanFord
+    COMMAND test_bellman_ford
 )
 
 #cmake -B build

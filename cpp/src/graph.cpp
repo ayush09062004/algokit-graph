@@ -8,6 +8,8 @@
 #include "algokit/topological_sort.hpp"
 #include "algokit/kahn_topological_sort.hpp"
 #include "algokit/shortest_path.hpp"
+#include "algokit/dijkstra.hpp"
+#include "algokit/bellman_ford.hpp"
 namespace algokit {
 
 //==========================
@@ -55,12 +57,15 @@ void Graph::add_edge(
 {
     validate_vertex(from);
     validate_vertex(to);
+
     adjacency_list_[from].push_back({to, weight});
 
     if (!directed_)
     {
         adjacency_list_[to].push_back({from, weight});
     }
+
+    edges_.push_back({from, to, weight});
 
     ++edge_count_;
 }
@@ -165,6 +170,32 @@ Graph::shortest_path(
     std::size_t source) const
 {
     return algokit::shortest_path(
+        *this,
+        source
+    );
+}
+
+ShortestPathResult
+Graph::dijkstra(
+    std::size_t source) const
+{
+    return algokit::dijkstra(
+        *this,
+        source
+    );
+}
+
+const std::vector<GraphEdge>&
+Graph::edges() const
+{
+    return edges_;
+}
+
+ShortestPathResult
+Graph::bellman_ford(
+    std::size_t source) const
+{
+    return algokit::bellman_ford(
         *this,
         source
     );

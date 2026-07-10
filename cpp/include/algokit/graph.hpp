@@ -11,11 +11,20 @@
 #include "algokit/kahn_topological_sort_result.hpp"
 #include "algokit/shortest_path_result.hpp"
 #include "algokit/types.hpp"
+#include "algokit/dijkstra.hpp"
+#include "algokit/bellman_ford.hpp"
 namespace algokit {
 
 //using Weight = double;
 
 struct Edge {
+    std::size_t to;
+    Weight weight;
+};
+
+struct GraphEdge
+{
+    std::size_t from;
     std::size_t to;
     Weight weight;
 };
@@ -40,6 +49,8 @@ public:
 
     const std::vector<Edge>& neighbors(std::size_t vertex) const;
 
+    const std::vector<GraphEdge>& edges() const;
+
     BFSResult bfs(std::size_t source) const;
 
     DFSResult dfs(std::size_t source) const;
@@ -59,6 +70,14 @@ public:
     std::size_t source
     ) const;
 
+    ShortestPathResult dijkstra(
+    std::size_t source
+    ) const;
+
+    ShortestPathResult bellman_ford(
+    std::size_t source
+    ) const;
+
 private:
     void validate_vertex(std::size_t vertex) const;
     Graph(std::size_t vertices, bool directed);
@@ -70,6 +89,8 @@ private:
     std::size_t edge_count_;
 
     std::vector<std::vector<Edge>> adjacency_list_;
+
+    std::vector<GraphEdge> edges_;
 };
 
 } // namespace algokit

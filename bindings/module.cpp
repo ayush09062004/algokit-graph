@@ -1,4 +1,5 @@
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 
 #include "algokit/graph.hpp"
 
@@ -6,9 +7,108 @@ namespace py = pybind11;
 
 using namespace algokit;
 
+//==================================================
+// Module
+//==================================================
+
 PYBIND11_MODULE(algokit, m)
 {
     m.doc() = "AlgoKit Python Bindings";
+
+    //==================================================
+    // BFS Result
+    //==================================================
+
+    py::class_<BFSResult>(m, "BFSResult")
+        .def("order", &BFSResult::order)
+        .def("distance", &BFSResult::distance)
+        .def("parent", &BFSResult::parent);
+
+    //==================================================
+    // DFS Result
+    //==================================================
+
+    py::class_<DFSResult>(m, "DFSResult")
+        .def("order", &DFSResult::order)
+        .def("parent", &DFSResult::parent)
+        .def("discovery_time", &DFSResult::discovery_time)
+        .def("finish_time", &DFSResult::finish_time);
+
+    //==================================================
+    // Connected Components Result
+    //==================================================
+
+    py::class_<ConnectedComponentsResult>(
+        m,
+        "ConnectedComponentsResult"
+    )
+        .def(
+            "component_count",
+            &ConnectedComponentsResult::component_count
+        )
+        .def(
+            "component_id",
+            &ConnectedComponentsResult::component_id
+        )
+        .def(
+            "components",
+            &ConnectedComponentsResult::components
+        );
+
+    //==================================================
+    // Topological Sort Result
+    //==================================================
+
+    py::class_<TopologicalSortResult>(
+        m,
+        "TopologicalSortResult"
+    )
+        .def(
+            "order",
+            &TopologicalSortResult::order
+        );
+
+    //==================================================
+    // Kahn Topological Sort Result
+    //==================================================
+
+    py::class_<KahnTopologicalSortResult>(
+        m,
+        "KahnTopologicalSortResult"
+    )
+        .def(
+            "order",
+            &KahnTopologicalSortResult::order
+        );
+
+    //==================================================
+    // Shortest Path Result
+    //==================================================
+
+    py::class_<ShortestPathResult>(
+        m,
+        "ShortestPathResult"
+    )
+        .def(
+            "distance",
+            &ShortestPathResult::distance
+        )
+        .def(
+            "parent",
+            &ShortestPathResult::parent
+        )
+        .def(
+            "is_reachable",
+            &ShortestPathResult::is_reachable
+        )
+        .def(
+            "path_to",
+            &ShortestPathResult::path_to
+        );
+
+    //==================================================
+    // Graph
+    //==================================================
 
     py::class_<Graph>(m, "Graph")
 
@@ -43,5 +143,55 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "is_directed",
             &Graph::is_directed
+        )
+
+        .def(
+            "bfs",
+            &Graph::bfs
+        )
+
+        .def(
+            "dfs",
+            &Graph::dfs
+        )
+
+        .def(
+            "connected_components",
+            &Graph::connected_components
+        )
+
+        .def(
+            "has_cycle",
+            &Graph::has_cycle
+        )
+
+        .def(
+            "has_directed_cycle",
+            &Graph::has_directed_cycle
+        )
+
+        .def(
+            "topological_sort",
+            &Graph::topological_sort
+        )
+
+        .def(
+            "kahn_topological_sort",
+            &Graph::kahn_topological_sort
+        )
+
+        .def(
+            "shortest_path",
+            &Graph::shortest_path
+        )
+
+        .def(
+            "dijkstra",
+            &Graph::dijkstra
+        )
+
+        .def(
+            "bellman_ford",
+            &Graph::bellman_ford
         );
 }
