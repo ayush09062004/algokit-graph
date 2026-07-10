@@ -1,1 +1,0 @@
-/usr/bin/c++ -fsanitize=address -fsanitize=undefined CMakeFiles/graph_demo.dir/app/main.cpp.o -o graph_demo  libalgokit_graph.a 

@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -fsanitize=address -fsanitize=undefined -flto=auto -shared  -o algokit.cpython-312-x86_64-linux-gnu.so CMakeFiles/algokit.dir/bindings/module.cpp.o  libalgokit_graph.a 

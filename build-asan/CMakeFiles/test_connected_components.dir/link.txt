@@ -1,1 +1,0 @@
-/usr/bin/c++ -fsanitize=address -fsanitize=undefined CMakeFiles/test_connected_components.dir/tests/test_connected_components.cpp.o -o test_connected_components  libalgokit_graph.a 
