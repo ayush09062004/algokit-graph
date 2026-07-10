@@ -10,7 +10,25 @@ using namespace algokit;
 //--------------------------------------------------
 // Simple Graph
 //--------------------------------------------------
+//--------------------------------------------------
+// Parallel Edges
+//--------------------------------------------------
 
+void test_parallel_edges()
+{
+    RUN_TEST("Parallel Edges");
+
+    Graph graph = Graph::directed(2);
+
+    graph.add_edge(0,1,3);
+    graph.add_edge(0,1,10);   // expensive edge added last
+
+    auto result = graph.floyd_warshall();
+
+    EXPECT_EQ(result.distance(0,1),3.0);
+
+    PASS_TEST("Parallel Edges");
+}
 void test_simple_graph()
 {
     RUN_TEST("Simple Graph");
@@ -184,7 +202,7 @@ int main()
         << "=====================================\n"
         << "AlgoKit Floyd-Warshall Tests\n"
         << "=====================================\n\n";
-
+    test_parallel_edges();
     test_simple_graph();
     test_negative_edges();
     test_disconnected_graph();

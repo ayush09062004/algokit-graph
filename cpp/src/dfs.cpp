@@ -9,6 +9,7 @@ DFSResult dfs(
     const Graph& graph,
     std::size_t source)
 {
+    graph.neighbors(source);
     internal::DFSState state(graph.vertex_count());
 
     internal::dfs_visit(graph, source, state);

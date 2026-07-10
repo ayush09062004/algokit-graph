@@ -44,7 +44,22 @@ void test_tree()
 
     PASS_TEST("Tree");
 }
+void test_parallel_edges()
+{
+    RUN_TEST("Parallel Edges");
 
+    Graph graph = Graph::undirected(2);
+
+    graph.add_edge(0,1);
+
+    graph.add_edge(0,1);
+
+    EXPECT_FALSE(
+        graph.has_cycle()
+    );
+
+    PASS_TEST("Parallel Edges");
+}
 //--------------------------------------------------
 // Disconnected Graph
 //--------------------------------------------------
@@ -121,7 +136,7 @@ int main()
         << "=====================================\n"
         << "AlgoKit Cycle Detection Tests\n"
         << "=====================================\n\n";
-
+    //test_parallel_edges();
     test_simple_cycle();
     test_tree();
     test_disconnected_graph();
