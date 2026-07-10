@@ -115,6 +115,12 @@ add_library(
     cpp/src/floyd_warshall_result.cpp
 
     #==========================
+    # Disjoint Set Union
+    #==========================
+
+    cpp/src/disjoint_set.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -391,6 +397,26 @@ target_link_libraries(
 add_test(
     NAME FloydWarshall
     COMMAND test_floyd_warshall
+)
+
+#--------------------------------------------------
+# Disjoint Set Tests
+#--------------------------------------------------
+
+add_executable(
+    test_disjoint_set
+    tests/test_disjoint_set.cpp
+)
+
+target_link_libraries(
+    test_disjoint_set
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME DisjointSet
+    COMMAND test_disjoint_set
 )
 
 #cmake -B build

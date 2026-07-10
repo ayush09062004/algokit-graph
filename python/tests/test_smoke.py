@@ -324,7 +324,30 @@ except RuntimeError as e:
 
     print("✓ Negative cycle detected")
 
+# --------------------------------------------------
+# Disjoint Set Union
+# --------------------------------------------------
 
+banner("Disjoint Set Union")
+
+dsu = algokit.DisjointSet(6)
+
+assert dsu.component_count() == 6
+
+assert dsu.unite(0, 1)
+assert dsu.unite(1, 2)
+
+assert dsu.connected(0, 2)
+assert not dsu.connected(0, 3)
+
+assert dsu.component_size(0) == 3
+assert dsu.component_count() == 4
+
+print("Root of 2:", dsu.find(2))
+print("Component Size:", dsu.component_size(0))
+print("Component Count:", dsu.component_count())
+
+print("✓ Disjoint Set Union passed")
 
 
 # --------------------------------------------------

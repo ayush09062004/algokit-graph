@@ -2,6 +2,7 @@
 #include <pybind11/stl.h>
 
 #include "algokit/graph.hpp"
+#include "algokit/disjoint_set.hpp"
 
 namespace py = pybind11;
 
@@ -122,6 +123,41 @@ PYBIND11_MODULE(algokit, m)
             "path",
             &FloydWarshallResult::path
         );
+
+
+    py::class_<DisjointSet>(
+        m,
+        "DisjointSet"
+    )
+
+    .def(
+        py::init<std::size_t>()
+    )
+
+    .def(
+        "find",
+        &DisjointSet::find
+    )
+
+    .def(
+        "unite",
+        &DisjointSet::unite
+    )
+
+    .def(
+        "connected",
+        &DisjointSet::connected
+    )
+
+    .def(
+        "component_size",
+        &DisjointSet::component_size
+    )
+
+    .def(
+        "component_count",
+        &DisjointSet::component_count
+    );
     
 
     //==================================================
