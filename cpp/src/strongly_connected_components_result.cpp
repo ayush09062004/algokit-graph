@@ -39,7 +39,7 @@ component_id(
 const std::vector<int>&
 StronglyConnectedComponentsResult::component_ids() const
 {
-    return component_ids_;
+    return component_id_;
 }
 
 const std::vector<
