@@ -438,6 +438,7 @@ PYBIND11_MODULE(algokit, m)
         Attributes:
             component_count (int): Number of SCCs.
             component_id (list[int]): Component ID for each vertex.
+            component_ids () -> list[int]: Returns the component ID for every vertex.
             components (list[list[int]]): List of vertices in each SCC.
         )doc")
         .def(
@@ -449,6 +450,11 @@ PYBIND11_MODULE(algokit, m)
             "component_id",
             &StronglyConnectedComponentsResult::component_id,
             "Returns the component ID for each vertex."
+        )
+        .def(
+            "component_ids",
+            &StronglyConnectedComponentsResult::component_ids,
+            "Returns the component ID for every vertex."
         )
         .def(
             "components",

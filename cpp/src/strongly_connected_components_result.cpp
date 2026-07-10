@@ -36,6 +36,12 @@ component_id(
     return component_id_[vertex];
 }
 
+const std::vector<int>&
+StronglyConnectedComponentsResult::component_ids() const
+{
+    return component_ids_;
+}
+
 const std::vector<
     std::vector<std::size_t>
 >&
