@@ -126,6 +126,7 @@ add_library(
 
     cpp/src/mst_result.cpp
     cpp/src/kruskal.cpp
+    cpp/src/prim.cpp
 
     #==========================
     # Internal Engines
@@ -444,6 +445,26 @@ target_link_libraries(
 add_test(
     NAME Kruskal
     COMMAND test_kruskal
+)
+
+#--------------------------------------------------
+# Prim Tests
+#--------------------------------------------------
+
+add_executable(
+    test_prim
+    tests/test_prim.cpp
+)
+
+target_link_libraries(
+    test_prim
+    PRIVATE
+        algokit_graph
+)
+
+add_test(
+    NAME Prim
+    COMMAND test_prim
 )
 
 #cmake -B build

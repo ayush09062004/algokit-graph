@@ -12,6 +12,7 @@
 #include "algokit/bellman_ford.hpp"
 #include "algokit/floyd_warshall.hpp"
 #include "algokit/kruskal.hpp"
+#include "algokit/prim.hpp"
 namespace algokit {
 
 //==========================
@@ -213,6 +214,12 @@ MSTResult
 Graph::kruskal() const
 {
     return algokit::kruskal(*this);
+}
+
+MSTResult
+Graph::prim() const
+{
+    return algokit::prim(*this);
 }
 
 } // namespace algokit

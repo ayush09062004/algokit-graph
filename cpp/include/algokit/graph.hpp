@@ -17,6 +17,7 @@
 #include "algokit/floyd_warshall_result.hpp"
 #include "algokit/mst_result.hpp"
 #include "algokit/kruskal.hpp"
+#include "algokit/prim.hpp"
 namespace algokit {
 
 //using Weight = double;
@@ -74,6 +75,8 @@ public:
     FloydWarshallResult floyd_warshall() const;
 
     MSTResult kruskal() const;
+
+    MSTResult prim() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

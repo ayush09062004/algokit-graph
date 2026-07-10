@@ -297,5 +297,10 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "kruskal",
             &Graph::kruskal
+        )
+
+        .def(
+            "prim",
+            &Graph::prim
         );
 }
