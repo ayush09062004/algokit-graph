@@ -1,27 +1,94 @@
 # Graph
 
-The Graph class represents a weighted graph.
+The `Graph` class is the core data structure of AlgoKit.
 
-Supported features:
+It supports:
 
 - Directed graphs
 - Undirected graphs
-- Weighted edges
+- Weighted graphs
+- Unweighted graphs
 
-## Example
+Graphs are internally stored as an **adjacency list**, providing efficient traversal and memory usage for sparse graphs.
+
+---
+
+## Creating a Graph
+
+### Directed Graph
+
+```cpp
+Graph graph = Graph::directed(5);
+```
+
+### Undirected Graph
 
 ```cpp
 Graph graph = Graph::undirected(5);
-
-graph.add_edge(0,1);
-graph.add_edge(0,2);
 ```
 
-Complexities
+---
+
+## Adding Edges
+
+Unweighted edge
+
+```cpp
+graph.add_edge(0, 1);
+```
+
+Weighted edge
+
+```cpp
+graph.add_edge(0, 1, 2.5);
+```
+
+---
+
+## Querying Graph Information
+
+```cpp
+graph.vertex_count();
+
+graph.edge_count();
+
+graph.is_directed();
+```
+
+---
+
+## Traversing Neighbors
+
+```cpp
+for (const auto& edge : graph.neighbors(0))
+{
+    std::cout
+        << edge.to
+        << " "
+        << edge.weight
+        << '\n';
+}
+```
+
+---
+
+## Complexity
 
 | Operation | Complexity |
 |------------|------------|
-| add_edge | O(1) |
-| neighbors | O(1) |
-| vertex_count | O(1) |
-| edge_count | O(1) |
+| Add Edge | O(1) |
+| Neighbors | O(degree(v)) |
+| Vertex Count | O(1) |
+| Edge Count | O(1) |
+
+---
+
+## Python
+
+```python
+g = algokit.Graph.directed(5)
+
+g.add_edge(0, 1)
+
+print(g.vertex_count())
+```
