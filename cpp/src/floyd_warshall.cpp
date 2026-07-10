@@ -47,14 +47,18 @@ floyd_warshall(
     }
 
     for (const GraphEdge& edge : graph.edges())
+{
+    if (edge.weight < distance[edge.from][edge.to])
     {
-        distance[edge.from][edge.to] =
-            edge.weight;
+        distance[edge.from][edge.to] = edge.weight;
 
         next[edge.from][edge.to] =
             static_cast<int>(edge.to);
+    }
 
-        if (!graph.is_directed())
+    if (!graph.is_directed())
+    {
+        if (edge.weight < distance[edge.to][edge.from])
         {
             distance[edge.to][edge.from] =
                 edge.weight;
@@ -63,6 +67,7 @@ floyd_warshall(
                 static_cast<int>(edge.from);
         }
     }
+}
 
     //--------------------------------------------------
     // Floyd-Warshall
