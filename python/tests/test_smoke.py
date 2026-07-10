@@ -267,6 +267,66 @@ except RuntimeError as e:
     print(e)
     print("✓ Negative cycle detected")
 
+
+
+
+
+# --------------------------------------------------
+# Floyd-Warshall
+# --------------------------------------------------
+
+banner("Floyd-Warshall")
+
+g = algokit.Graph.directed(5)
+
+g.add_edge(0, 1, 4)
+g.add_edge(0, 2, 1)
+g.add_edge(2, 1, 2)
+g.add_edge(1, 3, 1)
+g.add_edge(2, 3, 5)
+g.add_edge(3, 4, 3)
+
+fw = g.floyd_warshall()
+
+assert fw.distance(0, 4) == 7
+assert fw.distance(0, 3) == 4
+assert fw.distance(0, 2) == 1
+
+assert fw.path(0, 4) == [0, 2, 1, 3, 4]
+
+print("Distance 0 -> 4 :", fw.distance(0, 4))
+print("Path 0 -> 4     :", fw.path(0, 4))
+
+print("✓ Floyd-Warshall passed")
+
+# --------------------------------------------------
+# Floyd-Warshall Negative Cycle
+# --------------------------------------------------
+
+banner("Floyd-Warshall Negative Cycle")
+
+g = algokit.Graph.directed(3)
+
+g.add_edge(0, 1, 1)
+g.add_edge(1, 2, -2)
+g.add_edge(2, 0, -2)
+
+try:
+    g.floyd_warshall()
+
+    raise AssertionError(
+        "Expected negative cycle exception."
+    )
+
+except RuntimeError as e:
+
+    print(e)
+
+    print("✓ Negative cycle detected")
+
+
+
+
 # --------------------------------------------------
 
 banner("SUCCESS")

@@ -10,6 +10,7 @@
 #include "algokit/shortest_path.hpp"
 #include "algokit/dijkstra.hpp"
 #include "algokit/bellman_ford.hpp"
+#include "algokit/floyd_warshall.hpp"
 namespace algokit {
 
 //==========================
@@ -199,6 +200,12 @@ Graph::bellman_ford(
         *this,
         source
     );
+}
+
+FloydWarshallResult
+Graph::floyd_warshall() const
+{
+    return algokit::floyd_warshall(*this);
 }
 
 } // namespace algokit

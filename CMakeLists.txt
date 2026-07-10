@@ -108,6 +108,13 @@ add_library(
     cpp/src/bellman_ford.cpp
 
     #==========================
+    # Floyd-Warshall
+    #==========================
+
+    cpp/src/floyd_warshall.cpp
+    cpp/src/floyd_warshall_result.cpp
+
+    #==========================
     # Internal Engines
     #==========================
 
@@ -364,6 +371,26 @@ target_link_libraries(
 add_test(
     NAME BellmanFord
     COMMAND test_bellman_ford
+)
+
+#--------------------------------------------------
+# Floyd-Warshall Tests
+#--------------------------------------------------
+
+add_executable(
+    test_floyd_warshall
+    tests/test_floyd_warshall.cpp
+)
+
+target_link_libraries(
+    test_floyd_warshall
+    PRIVATE
+    algokit_graph
+)
+
+add_test(
+    NAME FloydWarshall
+    COMMAND test_floyd_warshall
 )
 
 #cmake -B build

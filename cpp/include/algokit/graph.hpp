@@ -13,6 +13,8 @@
 #include "algokit/types.hpp"
 #include "algokit/dijkstra.hpp"
 #include "algokit/bellman_ford.hpp"
+#include "algokit/floyd_warshall.hpp"
+#include "algokit/floyd_warshall_result.hpp"
 namespace algokit {
 
 //using Weight = double;
@@ -77,6 +79,8 @@ public:
     ShortestPathResult bellman_ford(
     std::size_t source
     ) const;
+
+    FloydWarshallResult floyd_warshall() const;
 
 private:
     void validate_vertex(std::size_t vertex) const;

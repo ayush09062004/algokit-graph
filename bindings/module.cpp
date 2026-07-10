@@ -106,6 +106,24 @@ PYBIND11_MODULE(algokit, m)
             &ShortestPathResult::path_to
         );
 
+    py::class_<FloydWarshallResult>(
+        m,
+        "FloydWarshallResult"
+    )
+        .def(
+            "distance",
+            &FloydWarshallResult::distance
+        )
+        .def(
+            "is_reachable",
+            &FloydWarshallResult::is_reachable
+        )
+        .def(
+            "path",
+            &FloydWarshallResult::path
+        );
+    
+
     //==================================================
     // Graph
     //==================================================
@@ -193,5 +211,10 @@ PYBIND11_MODULE(algokit, m)
         .def(
             "bellman_ford",
             &Graph::bellman_ford
+        )
+
+        .def(
+            "floyd_warshall",
+            &Graph::floyd_warshall
         );
 }
