@@ -15,6 +15,21 @@ AlgoKit Graph is currently a high-performance graph algorithms library written i
 
 ---
 
+## Installation
+
+Install the latest development version directly from GitHub:
+
+```bash
+pip install git+https://github.com/ayush09062004/algokit-graph.git
+```
+
+Or, in Google Colab:
+
+```python
+!pip install git+https://github.com/ayush09062004/algokit-graph.git
+```
+---
+
 ## Features
 
 ### Graph Types
