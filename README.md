@@ -82,6 +82,125 @@ Graph
 DisjointSet
 ```
 
+# Project Structure
+
+```
+algokit-graph/
+
+├── app/
+│
+├── bindings/
+│
+├── cpp/
+│   ├── include/
+│   └── src/
+│
+├── python/
+│
+├── tests/
+│
+├── docs/
+│
+├── CMakeLists.txt
+│
+└── README.md
+```
+
+---
+
+# Complexity Summary
+
+| Algorithm | Time Complexity |
+|------------|----------------|
+| BFS | O(V + E) |
+| DFS | O(V + E) |
+| Connected Components | O(V + E) |
+| Strongly Connected Components | O(V + E) |
+| Cycle Detection | O(V + E) |
+| Topological Sort | O(V + E) |
+| Kahn's Algorithm | O(V + E) |
+| Shortest Path (BFS) | O(V + E) |
+| Dijkstra | O(E log V) |
+| Bellman-Ford | O(VE) |
+| Floyd-Warshall | O(V³) |
+| Kruskal | O(E log E) |
+| Prim | O(E log V) |
+| Disjoint Set Operations | O(α(N)) |
+
+---
+
+# Testing
+
+AlgoKit includes comprehensive unit tests for every implemented algorithm.
+
+```bash
+cmake -B build
+
+cmake --build build
+
+ctest --test-dir build --output-on-failure
+```
+
+---
+
+# Roadmap
+
+## Completed
+
+- Graph Data Structure
+- Python Bindings
+- BFS
+- DFS
+- Connected Components
+- Strongly Connected Components
+- Cycle Detection
+- Topological Sort
+- Kahn's Algorithm
+- BFS Shortest Path
+- Dijkstra
+- Bellman-Ford
+- Floyd-Warshall
+- Disjoint Set Union
+- Kruskal
+- Prim
+
+## In Progress
+
+- Bridges (Tarjan)
+
+- Articulation Points (Tarjan)
+  
+- V2.0.0 **The STL for Graph Computing in Python**: A framework of high-performance graph primitives that lets users build their own algorithms while everything computationally intensive remains in C++.
+
+## Future
+
+- V2.0.0 **The STL for Graph Computing in Python**
+- Maximum Flow
+- Edmonds-Karp
+- Dinic
+- Johnson's Algorithm
+- A* Search
+- Euler Tour
+- Lowest Common Ancestor
+- Binary Lifting
+- Hopcroft-Karp
+- Hungarian Algorithm
+
+---
+
+# Contributing
+
+Contributions, bug reports, feature requests, and documentation improvements are welcome.
+
+Please open an issue or submit a pull request.
+
+---
+
+# License
+
+MIT License
+
+
 ---
 
 # Quick C++ Example
@@ -215,121 +334,3 @@ dsu.component_count()
 ```
 
 ---
-
-# Project Structure
-
-```
-algokit-graph/
-
-├── app/
-│
-├── bindings/
-│
-├── cpp/
-│   ├── include/
-│   └── src/
-│
-├── python/
-│
-├── tests/
-│
-├── docs/
-│
-├── CMakeLists.txt
-│
-└── README.md
-```
-
----
-
-# Complexity Summary
-
-| Algorithm | Time Complexity |
-|------------|----------------|
-| BFS | O(V + E) |
-| DFS | O(V + E) |
-| Connected Components | O(V + E) |
-| Strongly Connected Components | O(V + E) |
-| Cycle Detection | O(V + E) |
-| Topological Sort | O(V + E) |
-| Kahn's Algorithm | O(V + E) |
-| Shortest Path (BFS) | O(V + E) |
-| Dijkstra | O(E log V) |
-| Bellman-Ford | O(VE) |
-| Floyd-Warshall | O(V³) |
-| Kruskal | O(E log E) |
-| Prim | O(E log V) |
-| Disjoint Set Operations | O(α(N)) |
-
----
-
-# Testing
-
-AlgoKit includes comprehensive unit tests for every implemented algorithm.
-
-```bash
-cmake -B build
-
-cmake --build build
-
-ctest --test-dir build --output-on-failure
-```
-
----
-
-# Roadmap
-
-## Completed
-
-- Graph Data Structure
-- Python Bindings
-- BFS
-- DFS
-- Connected Components
-- Strongly Connected Components
-- Cycle Detection
-- Topological Sort
-- Kahn's Algorithm
-- BFS Shortest Path
-- Dijkstra
-- Bellman-Ford
-- Floyd-Warshall
-- Disjoint Set Union
-- Kruskal
-- Prim
-
-## In Progress
-
-- Bridges (Tarjan)
-
-- Articulation Points (Tarjan)
-  
-- V2.0.0 **The STL for Graph Computing in Python**: A framework of high-performance graph primitives that lets users build their own algorithms while everything computationally intensive remains in C++.
-
-## Future
-
-- V2.0.0 **The STL for Graph Computing in Python**
-- Maximum Flow
-- Edmonds-Karp
-- Dinic
-- Johnson's Algorithm
-- A* Search
-- Euler Tour
-- Lowest Common Ancestor
-- Binary Lifting
-- Hopcroft-Karp
-- Hungarian Algorithm
-
----
-
-# Contributing
-
-Contributions, bug reports, feature requests, and documentation improvements are welcome.
-
-Please open an issue or submit a pull request.
-
----
-
-# License
-
-MIT License
