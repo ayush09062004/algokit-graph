@@ -2,7 +2,10 @@
 
 <p align="center">
 
-A modern **C++17 Graph Algorithms Library** with **Python bindings**, designed for education, competitive programming, research, and production use.
+AlgoKit Graph is currently a high-performance graph algorithms library written in modern C++ with Python bindings powered by pybind11. It combines native C++ execution speed with a clean, Pythonic interface, making it suitable for education, research, and performance-sensitive graph analytics. I envision AlgoKit-Graph as a "The high-performance STL for Graph Computing in Python".
+
+- Documentation: https://ayush09062004.github.io/algokit-graph-documentation/
+- Test Notebooks(.ipynb): https://github.com/ayush09062004/algokit-graph-documentation
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)]()
 [![Python](https://img.shields.io/badge/Python-3.10%2B-yellow.svg)]()
@@ -16,10 +19,10 @@ A modern **C++17 Graph Algorithms Library** with **Python bindings**, designed f
 
 ### Graph Types
 
-- ✅ Directed Graphs
-- ✅ Undirected Graphs
-- ✅ Weighted Graphs
-- ✅ Unweighted Graphs
+- Directed Graphs
+- Undirected Graphs
+- Weighted Graphs
+- Unweighted Graphs
 
 ---
 
@@ -27,21 +30,21 @@ A modern **C++17 Graph Algorithms Library** with **Python bindings**, designed f
 
 | Category | Algorithm | C++ | Python | Tested |
 |----------|-----------|:---:|:------:|:------:|
-| Traversal | Breadth First Search (BFS) | ✅ | ✅ | ✅ |
-| Traversal | Depth First Search (DFS) | ✅ | ✅ | ✅ |
-| Connectivity | Connected Components | ✅ | ✅ | ✅ |
-| Connectivity | Strongly Connected Components (Kosaraju) | ✅ | ✅ | ✅ |
-| Cycle Detection | Undirected Cycle Detection | ✅ | ✅ | ✅ |
-| Cycle Detection | Directed Cycle Detection | ✅ | ✅ | ✅ |
-| DAG | Topological Sort (DFS) | ✅ | ✅ | ✅ |
-| DAG | Kahn's Topological Sort | ✅ | ✅ | ✅ |
-| Shortest Paths | BFS Shortest Path | ✅ | ✅ | ✅ |
-| Shortest Paths | Dijkstra | ✅ | ✅ | ✅ |
-| Shortest Paths | Bellman-Ford | ✅ | ✅ | ✅ |
-| Shortest Paths | Floyd-Warshall | ✅ | ✅ | ✅ |
-| Minimum Spanning Tree | Kruskal | ✅ | ✅ | ✅ |
-| Minimum Spanning Tree | Prim | ✅ | ✅ | ✅ |
-| Data Structures | Disjoint Set Union (Union-Find) | ✅ | ✅ | ✅ |
+| Traversal | Breadth First Search (BFS) | Y | Y | Y |
+| Traversal | Depth First Search (DFS) | Y | Y | Y |
+| Connectivity | Connected Components | Y | Y | Y |
+| Connectivity | Strongly Connected Components (Kosaraju) | Y | Y | Y |
+| Cycle Detection | Undirected Cycle Detection | Y | Y | Y |
+| Cycle Detection | Directed Cycle Detection | Y | Y | Y |
+| DAG | Topological Sort (DFS) | Y | Y | Y |
+| DAG | Kahn's Topological Sort | Y | Y | Y |
+| Shortest Paths | BFS Shortest Path | Y | Y | Y |
+| Shortest Paths | Dijkstra | Y | Y | Y |
+| Shortest Paths | Bellman-Ford | Y | Y | Y |
+| Shortest Paths | Floyd-Warshall | Y | Y | Y |
+| Minimum Spanning Tree | Kruskal | Y | Y | Y |
+| Minimum Spanning Tree | Prim | Y | Y | Y |
+| Data Structures | Disjoint Set Union (Union-Find) | Y | Y | Y |
 
 ---
 
@@ -278,31 +281,34 @@ ctest --test-dir build --output-on-failure
 
 ## Completed
 
-- ✅ Graph Data Structure
-- ✅ Python Bindings
-- ✅ BFS
-- ✅ DFS
-- ✅ Connected Components
-- ✅ Strongly Connected Components
-- ✅ Cycle Detection
-- ✅ Topological Sort
-- ✅ Kahn's Algorithm
-- ✅ BFS Shortest Path
-- ✅ Dijkstra
-- ✅ Bellman-Ford
-- ✅ Floyd-Warshall
-- ✅ Disjoint Set Union
-- ✅ Kruskal
-- ✅ Prim
+- Graph Data Structure
+- Python Bindings
+- BFS
+- DFS
+- Connected Components
+- Strongly Connected Components
+- Cycle Detection
+- Topological Sort
+- Kahn's Algorithm
+- BFS Shortest Path
+- Dijkstra
+- Bellman-Ford
+- Floyd-Warshall
+- Disjoint Set Union
+- Kruskal
+- Prim
 
 ## In Progress
 
-- 🚧 Bridges (Tarjan)
+- Bridges (Tarjan)
 
-- 🚧 Articulation Points (Tarjan)
+- Articulation Points (Tarjan)
+  
+- V2.0.0 **The STL for Graph Computing in Python**: A framework of high-performance graph primitives that lets users build their own algorithms while everything computationally intensive remains in C++.
 
 ## Future
 
+- V2.0.0 **The STL for Graph Computing in Python**
 - Maximum Flow
 - Edmonds-Karp
 - Dinic
