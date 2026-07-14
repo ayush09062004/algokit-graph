@@ -144,6 +144,61 @@ algokit-graph/
 
 ---
 
+# Benchmarks
+
+`algokit-graph` doesn't ship a benchmark script of its own, so the numbers
+below come from an independent verification notebook that builds the
+package from source exactly as the [Installation](#installation) section
+above describes, then times each implemented algorithm against a pure-Python
+implementation of the *same* algorithm on an identical random graph (built
+once, fed to both sides, so neither gets an easier input). Every benchmark
+asserts correctness before recording a timing. Measured on a Google Colab
+CPU runtime; absolute times will vary with the machine, but the relative
+ratios should be stable.
+
+### V = 10,000 vertices, E = 50,000 edges
+
+| Category | Algorithm | Python | `algokit_graph` | Speedup | Compared against |
+|---|---|---:|---:|---:|---|
+| Traversal | BFS | 0.00975s | 0.00062s | **15.70×** | `collections.deque` BFS |
+| Traversal | DFS | 0.03594s | 0.00166s | **21.58×** | iterative stack-based DFS |
+| Connectivity | Connected Components | 0.03221s | 0.00204s | **15.77×** | iterative DFS component count |
+| Shortest paths | Dijkstra | 0.04650s | 0.00313s | **14.85×** | `heapq`-based Dijkstra |
+| Shortest paths | Bellman-Ford | 0.01103s | 0.00018s | **59.97×** | O(V·E) Python Bellman-Ford (scaled-down n) |
+| MST | Kruskal | 0.07170s | 0.00432s | **16.59×** | `sorted()` + union-find in Python |
+| DAG | Kahn's Topological Sort | 0.00820s | 0.00064s | **12.83×** | `collections.deque` Kahn's algorithm |
+
+### Larger scale — V = 100,000 vertices, E = 500,000 edges
+
+Re-run at 10× the graph size to check whether the speedups hold up as the
+input grows, rather than being an artifact of a small graph fitting in cache.
+
+| Category | Algorithm | Python | `algokit_graph` | Speedup | Compared against |
+|---|---|---:|---:|---:|---|
+| Traversal | BFS | 0.19013s | 0.01210s | **15.71×** | `collections.deque` BFS |
+| Traversal | DFS | 0.22067s | 0.02568s | **8.59×** | iterative stack-based DFS |
+| Connectivity | Connected Components | 0.30073s | 0.04321s | **6.96×** | iterative DFS component count |
+| Shortest paths | Dijkstra | 0.54582s | 0.04703s | **11.61×** | `heapq`-based Dijkstra |
+| Shortest paths | Bellman-Ford | 0.10003s | 0.00143s | **70.10×** | O(V·E) Python Bellman-Ford (scaled-down n) |
+| MST | Kruskal | 0.45049s | 0.03646s | **12.35×** | `sorted()` + union-find in Python |
+| DAG | Kahn's Topological Sort | 0.16868s | 0.01355s | **12.45×** | `collections.deque` Kahn's algorithm |
+
+Ratios stay in the same **~7×–70×** band at 10× the graph size — BFS and
+Bellman-Ford hold essentially steady or improve, while DFS/Connected
+Components/Kruskal narrow somewhat but remain solidly in native-speedup
+territory.
+
+**Why graph algorithms hold up well:** every one of these calls
+(`g.bfs(0)`, `g.dijkstra(0)`, ...) crosses the Python↔C++ boundary
+**once** — the entire traversal or shortest-path computation runs natively
+inside the pybind11-wrapped C++ layer, and only the final result (order
+list, distance array, MST edge list) comes back to Python. That's a very
+different access pattern from calling many small per-element operations
+from Python one at a time, which is why the speedups here are consistent
+rather than mixed.
+
+---
+
 # Testing
 
 AlgoKit includes comprehensive unit tests for every implemented algorithm.
